@@ -1,0 +1,86 @@
+.about {
+    grid-column: full-start / full-end;
+    grid-row: 3 / span 1;
+    background-color: $color-grey-light-1;
+    height: 100%;
+    padding: 15rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+
+    @media only screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+
+
+    &__content {
+        line-height: 1.6;
+        padding: 4rem 10rem;
+        
+        &--paragraph{
+             font-size: 1.8rem;
+             line-height: 1.65;
+
+         }
+        @media only screen and (max-width: 900px) {
+            padding: 2rem;
+            margin-bottom: 3rem;
+            width: 90%;
+        }
+
+    }
+
+    &__images {
+        position: relative;
+        padding: 4rem 10rem;
+    }
+
+    &__image {
+        width: 50%;
+        position: absolute;
+        transition: all 0.5s;
+        border-radius: 0.5rem;
+        backface-visibility: hidden;
+        outline-offset: 1rem;
+        z-index: 10;
+        display: inline-block;
+        box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+
+        &:hover {
+            z-index: 20;
+            outline: 0.4rem solid $color-primary;
+            transform: scale(1.1);
+        }
+
+        &--1 {
+            top: -10rem;
+            @media only screen and (max-width: 900px) {
+                top: -3rem;
+            }
+        }
+
+        &--2 {
+            left: -4rem;
+
+            @media only screen and (max-width: 900px) {
+                left: -1rem;
+                left: 2rem;
+            }
+        }
+
+        &--3 {
+            top: -4rem;
+            left: 24rem;
+
+            @media only screen and (max-width: 900px) {
+                top: -1rem;
+                left: 6rem;
+            }
+        }
+    }
+
+    &__images:hover &__image:not(:hover) {
+        transform: scale(0.95);
+    }
+}

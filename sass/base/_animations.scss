@@ -1,0 +1,28 @@
+@keyframes animateHomeImg {
+    0%  {
+        transform: scale(1);
+    }
+
+    50%  {
+        transform: scale(1.1) translateX(5rem);
+    }
+
+    100%  {
+        transform: scale(1);
+    }
+}
+
+@keyframes animateLogoImg {
+    0%  {
+        transform: translateY(0);
+    }
+
+    50%  {
+        transform: translateY(-2rem);
+
+    }
+
+    100%  {
+        transform: translateY(0);
+    }
+}

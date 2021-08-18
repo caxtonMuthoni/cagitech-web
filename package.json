@@ -1,0 +1,35 @@
+{
+  "name": "cagitech",
+  "version": "1.0.0",
+  "description": "Number one software development company",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss resources/css/style.css -w",
+    "dev:server": "live-server",
+    "dev": "npm-run-all --parallel dev:server watch:sass",
+
+
+    "compile:sass": "node-sass sass/main.scss resources/css/style.comp.css",
+    "concat:css": "concat -o resources/css/style.concat.css resources/css/iconfont.css resources/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' resources/css/style.comp.css -o resources/css/style.pref.css",
+    "compress:css": "node-sass resources/css/style.pref.css resources/css/style.css --output-style compressed",
+    "build": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "keywords": [
+    "software",
+    "development",
+    "Android",
+    "applications",
+    "web",
+    "applications"
+  ],
+  "author": "muthoni g caxton",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "concat": "^1.0.3",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  }
+}
